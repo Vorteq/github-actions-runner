@@ -32,5 +32,5 @@ jobs:
         DOCKER_REGISTRY: ghcr.io/vorteq/github-actions-runner/github-actions-runner
       run: |
         docker login https://ghcr.io -u "$USERNAME_GITHUB" --password "$githubTokenSecret" 
-        docker build . -t "$DOCKER_REGISTRY":${{ github.sha }} --network host
-        docker push "$DOCKER_REGISTRY":${{ github.sha }}
+        docker build . -t "$DOCKER_REGISTRY":focal-latest --network host
+        docker push "$DOCKER_REGISTRY":focal-latest
